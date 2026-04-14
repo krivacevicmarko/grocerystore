@@ -33,7 +33,7 @@ export const updateUser = async (
         dto.password = await bcrypt.hash(dto.password, 10);
     }
 
-    return await User.findByIdAndUpdate(id, dto, {new: true}).populate("nodeId");
+    return await User.findByIdAndUpdate(id, dto, {returnDocument: "after"}).populate("nodeId");
 };
 
 export const deleteUser = async (id: string): Promise<IUser | null> => {

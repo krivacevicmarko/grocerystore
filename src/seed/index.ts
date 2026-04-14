@@ -45,10 +45,10 @@ const seedData = async (): Promise<void> => {
 
         console.log("Nodes seeded successfully!");
 
-        const hashedPassword = await bcrypt.hash("test123",10);
+        const hashedPassword = await bcrypt.hash("test0707test",10);
 
         await User.create({
-            username: "manager_srbija",
+            username: "admin_srbija",
             password: hashedPassword,
             role: "MANAGER",
             nodeId: srbija._id
